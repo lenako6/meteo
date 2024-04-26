@@ -4,42 +4,55 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
     <title>Meteo App</title>
   </head>
   <body>
-    <div class="weather-app"> 
-    <header>
-      <form>
-        <input type="search" placeholder="Enter a city.." />
-        <input type="submit" value="Search" />
-      </form>
-    </header>
-    <main>
-      <div>
-        <h1>Paris</h1>
-        <p>
-          Tuesday 14:49, scattered clouds
-          <br />
-          Humidity: 66%, Wind: 3.13km/h
-        </p>
-      </div>
-      <div>⛅ 12°C</div>
-    </main>
+    <div class="weather-app">
+      <header>
+        <form>
+          <input
+            type="search"
+            class="search-form-input"
+            placeholder="Enter a city.."
+          />
+          <input type="submit" class="search-form-button" value="Search" />
+        </form>
+      </header>
+      <main>
+        <div class="weather-app-data">
+          <div>
+            <h1 class="weather-app-city">Paris</h1>
+            <p class="weather-app-details">
+              Tuesday 14:49, scattered clouds
+              <br />
+              Humidity: <strong>66%</strong>, Wind: <strong>3.13km/h</strong>
+            </p>
+          </div>
+          <div class="weather-app-temperature-container">
+            <div class="weather-app-icon">⛅</div>
+            <div class="weather-app-temperature">12</div>
+            <div class="weather-app-unit">°C</div>
+          </div>
+        </div>
+      </main>
 
-    <footer>
-      Coded by
-      <a href="https://github.com/lenako6" target="_blank">Lena Ko </a> is
-      <a href="https://github.com/lenako6/meteo" target="_blank"
-        >open-sourced on GitHub</a
-      >
-      and
-      <a href="https://weather-best-app.netlify.app/" target="_blank"
-        >hosted on Netlify</a
-      >
-      </div>
-    </footer>
+      <footer>
+        Coded by
+        <a href="https://github.com/lenako6" target="_blank">Lena Ko </a> is
+        <a href="https://github.com/lenako6/meteo" target="_blank"
+          >open-sourced on GitHub</a
+        >
+        and
+        <a href="https://weather-best-app.netlify.app/" target="_blank"
+          >hosted on Netlify</a
+        >
+      </footer>
+    </div>
   </body>
 </html>
