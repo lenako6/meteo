@@ -12,6 +12,7 @@ function refreshWeather(response) {
   icon.innerHTML = `<img
                 src="${response.data.condition.icon_url}"
                 class="weather-app-icon">`;
+  console.log(response.data);
 
   cityElement.innerHTML = response.data.city;
   descriptionElement.innerHTML = response.data.condition.description;
