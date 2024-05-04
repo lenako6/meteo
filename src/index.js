@@ -12,7 +12,6 @@ function refreshWeather(response) {
   icon.innerHTML = `<img
                 src="${response.data.condition.icon_url}"
                 class="weather-app-icon">`;
-  console.log(response.data);
 
   cityElement.innerHTML = response.data.city;
   descriptionElement.innerHTML = response.data.condition.description;
@@ -20,6 +19,8 @@ function refreshWeather(response) {
   currentHumidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   currentWindElement.innerHTML = `${response.data.wind.speed}km/h`;
   timeElement.innerHTML = formatDate(date);
+
+  getForecast(response.data.city);
 }
 
 function formatDate(date) {
@@ -57,7 +58,15 @@ function handleSearchSubmit(event) {
   searchCity(searchInput.value);
 }
 
-function displayForecast() {
+function getForecast(city) {
+  let apiKey = "9b88f302eda2e45a60aa86o7bcab4tbd";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+  console.log(response.data);
+
   let forecastElement = document.querySelector("#forecast");
 
   let days = ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -85,5 +94,4 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("Lviv");
-
-displayForecast();
+getForecast("Lviv");
